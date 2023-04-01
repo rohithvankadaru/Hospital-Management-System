@@ -10,11 +10,11 @@ public class Patient {
 
     private int age;
 
-    public Patient(Integer patientId, String name, String disease, Integer age) {
+    public Patient(int patientID, String name, String disease, int age) {
         this.patientID = patientID;
-        this.name = this.name;
-        this.disease = this.disease;
-        this.age = this.age;
+        this.name = name;
+        this.disease = disease;
+        this.age = age;
     }
 
     public int getPatientID() {
