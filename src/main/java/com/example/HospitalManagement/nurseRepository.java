@@ -11,12 +11,22 @@ public class nurseRepository {
 
     public String add(Nurse nurse){
         int key = nurse.getNurseID();
-        if(nurseDb.containsKey(key)) return "already Exists";
+       // if(nurseDb.containsKey(key)) return "already Exists";
         nurseDb.put(key, nurse);
         return "added Successfully";
     }
 
-    public List<Nurse> all(){
+    public String update(int id, int age){
+        if(nurseDb.containsKey(id)){
+            Nurse currNurse = nurseDb.get(id);
+            currNurse.setAge(age);
+            nurseDb.put(id, currNurse);
+            return "successfully updated";
+        }
+        return "no such nurse";
+    }
+
+    public List<Nurse> getAll(){
         return nurseDb.values().stream().toList();
     }
 
