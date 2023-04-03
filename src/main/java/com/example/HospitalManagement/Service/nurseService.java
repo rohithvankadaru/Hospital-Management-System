@@ -1,5 +1,7 @@
-package com.example.HospitalManagement;
+package com.example.HospitalManagement.Service;
 
+import com.example.HospitalManagement.Models.Nurse;
+import com.example.HospitalManagement.Repository.nurseRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.example.HospitalManagement;
+package com.example.HospitalManagement.Controller;
 
+import com.example.HospitalManagement.Models.Patient;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/patient")
 public class patientController {
 
-    HashMap<Integer,Patient> patientDb = new HashMap<>();
+    HashMap<Integer, Patient> patientDb = new HashMap<>();
     @PostMapping("/addViaParam")
     public String addPatient(@RequestParam("patientID")Integer patientId, @RequestParam("name")String name,
                            @RequestParam("disease")String disease, @RequestParam("age")Integer age){
@@ -31,7 +31,7 @@ public class patientController {
     }
 
     @GetMapping("/getViaPath/{patientId}")
-    public Patient getpatientViaPath(@PathVariable("PatientId") Integer patientId){
+    public Patient getpatientViaPath(@PathVariable("patientId") Integer patientId){
         Patient patient = patientDb.get(patientId);
 
         return patient;
