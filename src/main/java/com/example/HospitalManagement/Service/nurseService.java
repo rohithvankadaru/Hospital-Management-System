@@ -2,12 +2,15 @@ package com.example.HospitalManagement.Service;
 
 import com.example.HospitalManagement.Models.Nurse;
 import com.example.HospitalManagement.Repository.nurseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 public class nurseService {
-    nurseRepository nurseRepositoryObj = new nurseRepository();
+
+    @Autowired
+     nurseRepository nurseRepositoryObj;
     public String add(Nurse nurse){
         String msg = nurseRepositoryObj.add(nurse);
         return msg;

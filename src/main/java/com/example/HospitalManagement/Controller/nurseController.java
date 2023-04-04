@@ -2,6 +2,7 @@ package com.example.HospitalManagement.Controller;
 
 import com.example.HospitalManagement.Models.Nurse;
 import com.example.HospitalManagement.Service.nurseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @RequestMapping("/nurse")
 public class nurseController {
 
-    nurseService nurseServiceObj = new nurseService();
+    @Autowired
+    nurseService nurseServiceObj;
     @PostMapping("/add")
     public String add(@RequestBody Nurse nurse){
        String msg = nurseServiceObj.add(nurse);
